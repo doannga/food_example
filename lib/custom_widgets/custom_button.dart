@@ -1,28 +1,15 @@
 import 'package:flutter/material.dart';
 
-class CustomIconButton extends StatelessWidget {
-  final Widget icon;
+class CustomButton extends StatelessWidget {
   final void Function() onPressed;
+  final Text text;
   final Color backgroundColor;
   final double radius;
   final Color colorShadow;
   final Offset offset;
   final double spreadRadius;
   final double blurRadius;
-
-
-  const CustomIconButton({
-    Key? key,
-    required this.icon,
-    required this.onPressed,
-    this.backgroundColor = Colors.transparent,
-    required this.radius,
-    this.colorShadow = Colors.transparent,
-    required this.offset,
-    required this.blurRadius,
-    required this.spreadRadius,
-
-  }) : super(key: key);
+  const CustomButton({Key? key, required this.text, required this.backgroundColor, required this.radius, required this.colorShadow,required this.offset, required this.spreadRadius,required this.blurRadius, required this.onPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,12 +24,9 @@ class CustomIconButton extends StatelessWidget {
           ),]
       ),
       color: backgroundColor,
-      child: InkWell(
-        onTap: onPressed ?? (){},
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: icon,
-        ),
+      child: ElevatedButton(
+        onPressed: onPressed ?? (){},
+        child: text
       ),
     );
   }

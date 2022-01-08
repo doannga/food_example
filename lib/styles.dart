@@ -90,3 +90,39 @@ const mAddToCardStyle = TextStyle(
   height: 25.29,
   color: Color(0xFFFFFFFF),
 );
+const mTitleAppBar = TextStyle(
+  fontFamily: 'Poppins',
+  fontWeight: FontWeight.w600,
+  fontSize: 20,
+  fontStyle: FontStyle.normal,
+  letterSpacing: 0.015,
+  height: 26.94,
+  color: Color(0xFFFFFFFF),
+);
+const mPaymentText = TextStyle(
+  fontFamily: 'Poppins',
+  fontWeight: FontWeight.w600,
+  fontSize: 16,
+  fontStyle: FontStyle.normal,
+  letterSpacing: 0.02,
+  height: 21.87,
+  color: Color(0xFFFFFFFF),
+);
+var mDecorationPayment = BoxDecoration(
+  boxShadow: const [BoxShadow(
+    offset: Offset(0,12),
+    blurRadius: 52,
+    spreadRadius: -15,
+    color: Color(0xFFF4F8FB),
+  )],
+  borderRadius: BorderRadius.circular(14),
+);
+const mTextButton = TextStyle(
+  fontFamily: 'Poppins',
+  fontWeight: FontWeight.w700,
+  fontSize: 20,
+  fontStyle: FontStyle.normal,
+  letterSpacing: 0.005,
+  height: 27.34,
+  color: Color(0xFFFFFFFF),
+);
