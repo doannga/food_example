@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_exam/pages/cart/cart_screen.dart';
+import 'package:food_delivery_exam/pages/home/home_screen.dart';
 import 'package:food_delivery_exam/pages/on_boarding/on_boarding_screen.dart';
 
 void main() {
@@ -10,6 +12,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const OnBoardingScreen();
+    return const MaterialApp(
+      home: CartScreen(),
+    );
   }
 }

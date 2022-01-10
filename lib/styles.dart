@@ -126,3 +126,21 @@ const mTextButton = TextStyle(
   height: 27.34,
   color: Color(0xFFFFFFFF),
 );
+const mItemIsActive = TextStyle(
+  fontFamily: 'Poppins',
+  fontWeight: FontWeight.w600,
+  fontSize: 17,
+  fontStyle: FontStyle.normal,
+  letterSpacing: 0.015,
+  height: 22.9,
+  color: Color(0xFF3F4042),
+);
+const mItemIsNotActive = TextStyle(
+  fontFamily: 'Poppins',
+  fontWeight: FontWeight.w500,
+  fontSize: 17,
+  fontStyle: FontStyle.normal,
+  letterSpacing: 0.015,
+  height: 22.9,
+  color: Color(0xFFC5C4CB),
+);

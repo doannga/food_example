@@ -15,39 +15,61 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        physics: const ClampingScrollPhysics(),
-        controller: _pageController,
-        onPageChanged: (int page){
-          setState(() {
-            _curPage = page;
-          });
-        },
-        children: [
-          buildPage1(),
-          buildPage2(),
-          buildPage3(),
-        ],
+      body: SafeArea(
+        child:  PageView(
+          physics: const ClampingScrollPhysics(),
+      controller: _pageController,
+      onPageChanged: (int page) {
+        setState(() {
+          _curPage = page;
+        });
+      },
+      children: [
+        buildPage1(),
+        buildPage2(),
+        buildPage3(),
+      ],
+    ),
       ),
+
     );
   }
 
   Widget buidImage() {
-    return Container(
-      child: Center(
-        child: Stack(
-          children: [
-            Positioned(child: Image.asset('assets/images/OnBoarding_Vector.png'), top: 124, left: 30,),
-            Stack(
-              alignment: Alignment.bottomCenter,
-              children: [
-                Positioned(child: Image.asset('assets/images/OnBoarding_Rectangle42.png')),
-                Positioned(child: Image.asset('assets/images/OnBoarding_Rectangle37.png')),
-              ],
-            ),
-            Positioned(child: Image.asset('assets/images/OnBoarding_Vector.png'),top: 150, left: 20,),
-          ],
-        ),
+    return Center(
+      child: Stack(
+        children: [
+          Stack(
+            alignment: Alignment.bottomCenter,
+            children: [
+              Positioned(
+                child: SizedBox(
+                  height: 250,
+                    width: 200,
+                    child: Image.asset(
+                        'assets/images/OnBoarding_Rectangle42.png')),
+                ),
+              Positioned(
+                child: SizedBox(
+                    height: 230,
+                    width: 180,
+                    child: Image.asset(
+                        'assets/images/OnBoarding_Rectangle37.png')),
+              )
+
+            ],
+          ),
+          Positioned(
+            child: Image.asset('assets/images/OnBoarding_Vector.png'),
+            top: 124,
+            left: 30,
+          ),
+          Positioned(
+            child: Image.asset('assets/images/OnBoarding_Vector.png'),
+            top: 150,
+            right: 20,
+          ),
+        ],
       ),
     );
   }
@@ -76,15 +98,17 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       ),
     );
   }
-  Widget buidIndicator(){
+
+  Widget buidIndicator() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: _buildIndicator(),
     );
   }
-  Widget buildTextPage1(){
+
+  Widget buildTextPage1() {
     return Padding(
-      padding:   const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
@@ -120,9 +144,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       ),
     );
   }
-  Widget buildTextPage2(){
+
+  Widget buildTextPage2() {
     return Padding(
-      padding:  const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
@@ -158,9 +183,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       ),
     );
   }
-  Widget buildTextPage3(){
+
+  Widget buildTextPage3() {
     return Padding(
-      padding:  const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
@@ -196,7 +222,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       ),
     );
   }
-  Widget buildButtonGetStart(){
+
+  Widget buildButtonGetStart() {
     return Container(
       height: 75.0,
       width: 206.0,
@@ -206,13 +233,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           borderRadius: BorderRadius.all(
             Radius.circular(42.42),
           ),
-          boxShadow: [BoxShadow(
-            color: Color.fromRGBO(47, 52, 64, 0.76),
-            spreadRadius: -10,
-            blurRadius: 42,
-            offset: Offset(0, 9),
-          ),]
-      ),
+          boxShadow: [
+            BoxShadow(
+              color: Color.fromRGBO(47, 52, 64, 0.76),
+              spreadRadius: -10,
+              blurRadius: 42,
+              offset: Offset(0, 9),
+            ),
+          ]),
       child: Center(
         child: GestureDetector(
           onTap: () {},
@@ -231,8 +259,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       ),
     );
   }
-  Widget buildPage1(){
-    return Row(
+
+  Widget buildPage1() {
+    return Column(
       children: [
         buidImage(),
         buidIndicator(),
@@ -241,8 +270,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       ],
     );
   }
-  Widget buildPage2(){
-    return Row(
+
+  Widget buildPage2() {
+    return Column(
       children: [
         buidImage(),
         buidIndicator(),
@@ -251,8 +281,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       ],
     );
   }
-  Widget buildPage3(){
-    return Row(
+
+  Widget buildPage3() {
+    return Column(
       children: [
         buidImage(),
         buidIndicator(),
